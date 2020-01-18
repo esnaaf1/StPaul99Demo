@@ -303,6 +303,8 @@ function updatePlotly() {
             // Call function to update the chart
         Plotly.newPlot("plot", data,layout);
 
+    }).catch( function(error){
+      console.log(error);
     });
   };
   

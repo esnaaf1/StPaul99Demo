@@ -61,8 +61,8 @@ d3.json("/trafficdata").then(function (response){
     values = Object.values(sortedObj);
 
 
-    // create a "Chartist"  line graph
-    var chart = new Chartist.Line('.ct-chart', {
+    // >>>> create a "Chartist"  line graph
+    var chart = new Chartist.Line('#chart2', {
       labels: months,
       series: [values],
 
@@ -83,7 +83,7 @@ d3.json("/trafficdata").then(function (response){
         
     });
     
-    // >>>> Chartist animation code starts here...
+    // >>>> Chartist aninamted time series chart code starts here...
     // Let's put a sequence number aside so we can use it in the event callbacks
     var seq = 0;
 
@@ -129,7 +129,10 @@ d3.json("/trafficdata").then(function (response){
     });
     
     
-      // >>>> Chartlist animation ends here 
+      // >>>> Chartlist animated time series ends here 
+      
+
+  
 //****************** End d3.json data processing block**************
  
 }).catch( function(error){
