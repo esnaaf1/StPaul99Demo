@@ -302,6 +302,7 @@ function updatePlotly() {
 
             // Call function to update the chart
         Plotly.newPlot("plot", data,layout);
+        // Plotly.restyle("plot", "x", [[data]]);
 
     }).catch( function(error){
       console.log(error);
