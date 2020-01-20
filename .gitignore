@@ -24,3 +24,6 @@ hs_err_pid*
 
 # DSS_Store
 .DS_Store
+
+# Config file
+config.js
