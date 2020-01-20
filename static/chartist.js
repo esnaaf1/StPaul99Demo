@@ -78,8 +78,8 @@ d3.json("/trafficdata").then(function (response){
       //   showLabel: true,
       //   offset: 10
       // },
-      width: '800px',
-      height: '200px',
+      // width: '800px',
+      // height: '200px',
         
     });
     

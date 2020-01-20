@@ -113,7 +113,7 @@ d3.json(trafficdataPath).then(function(response, err)
             valueProperty: "stops",
 
             // Set color scale
-            scale: ["#DAF7A6", "#581845"],
+            scale: ["#E2E7F5", "#071696"],
 
             // Number of breaks in step range
             steps: 6,
@@ -129,8 +129,8 @@ d3.json(trafficdataPath).then(function(response, err)
 
             // Binding a pop-up to each layer
             onEachFeature: function(feature, layer) {
-                layer.bindPopup("District: " + feature.properties.dist + "<br>Grid Number:<br>" 
-                + feature.properties.gridnum + "<p>Total Stops</p>" + feature.properties.stops);
+                layer.bindPopup("<h6>District: " + feature.properties.dist + "</h6><hr>Grid Number:  " 
+                + feature.properties.gridnum + "<p>Total Stops:  " + feature.properties.stops + "</p>");
             }
         }).addTo(gridLayer);
 
@@ -160,16 +160,16 @@ d3.json(trafficdataPath).then(function(response, err)
             var labels = [];
 
             // Add min & max
-            var legendInfo = "<h5>Traffic Stops</h5>" +
-            "<div class=\"labels\">" +
-                "<div class=\"min\">" + limits[0] + "</div>" +
-                "<div class=\"max\">" + limits[limits.length - 1] + "</div>" +
-            "</div>";
+            console.log(`limits ${limits[0]} - ${limits[limits.length -1]}`);
+            var legendInfo = "<h6>Traffic Stops</h6>";
 
             div.innerHTML = legendInfo;
 
             limits.forEach(function(limit, index) {
-            labels.push("<li style=\"background-color: " + colors[index] + "\"></li>");
+            labels.push("<li style=\"background-color: " + colors[index] 
+                + ";list-style-type:none"
+                + ";text-align:center;"
+                + "\">" + "<font color=\"orange\">" + limits[index] + "</font></li>");
             });
 
             div.innerHTML += "<ul>" + labels.join("") + "</ul>";
